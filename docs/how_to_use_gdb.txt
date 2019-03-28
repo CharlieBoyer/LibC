@@ -1,0 +1,115 @@
+
+//-------------HOW TO USE GDB-------------//
+
+BEFORE Starting : Always add the -g flag to compile programs with debugging     
+informations needed by gdb
+(note : gcc support -0 and -g flag in same time)
+
+---> gdb : In a terminal, enter in gdb mode
+
+//--------IN GDB--------//
+
+---> -eval-command "command" :
+called -ex "command" too, -eval-command execute a single GDB "command" and need 
+sometimes to be repeated to make the expected result (example : -ex break 34 
+-ex run).
+This syntaxe is used by VS Code built-in debug console
+
+---> run "program" :
+run the debugger with the specified "program" to debug
+
+---> break "location" :
+Add a breakpoint at the function, line number specified in "location".
+
+---> info break :
+Allow us to see breakpoints informations such as their number in the list, 
+their status, etc...
+
+---> disable [breakpoints] :
+Disable but not forgot one or various breakpoints, for enable them later. (If 
+none are specified, disable all breakpoints)
+
+---> enable [breakpoints] (once/count/delete) :
+This command enable one or various breakpoints again, "once" key-word enable 
+specified breakpoint once and disable it after, "delete" enable the breakpoint 
+once before delete it and "count" disable the breakpoint after being trigger 
+"count" times
+
+---> delete "file:location" :
+If no arguments are specified, this command delete all breakpoint after a 
+confirmation. Otherwise, we can specify a function or linenum (even in a 
+particular file).
+
+---> clear :
+clear is an alternative to delete, where it delete the next breakpoint 
+encounter, always by stopping the actual process and return control to GDB
+
+---> step(i) : 
+step resume a running program until control reaches a different line, then stop 
+again. The stepi variant allow to step without debugging informations (-g)
+
+---> backtrace [args] :
+This command is used when a program under gdb control reaches his end. At that 
+moment, backtrace make a summary what happened in the program so far, without 
+arguments, backtrace print all frames of the stack, i.e. the command print 
+informations such as arguments given, local variables values, associated to one 
+function called in the call stack.
+Command args are "n" ; "-n" and "full" : by order, "n" says to backtrace to 
+print the "n" latest frames (the innermost frames), "-n" shows the first frames 
+by starting from the main (the outermost frame). Finally, "full" print all 
+local variable values
+
+---> frame (level) "level_number" :
+Select a frame at current "level_number", the level is the position of the 
+frame in the stack. So the frame (level) 1 is the frame on the latest function 
+called, the maximum level is normaly the outermost frame level, main function 
+by default. the "level" word is not mandatory.
+
+---> info frame [frame_selection_specs] :
+Show informations about the frame specified in the field [frame_selection_specs]
+which contains himself the same thing as frame command, i.e. the frame level
+
+---> info args/local :
+Show informations about arguement given to the function in the selected frame 
+in the case of args. Otherwise, in the case of local, print the local variables 
+values, each on a separated line.
+The [-q] option stand for "quiet" and not print header which inform why no args 
+or variable are print
+
+---> list "linenum"/"function" :
+Print source code around specified "linenum" or "function" name
+
+---> print "expr" :
+Call inspect too and uselful between each stepi, print evaluate the expression "expr" such as a variable, for example and print it.
+To print local variable, the running program must be in the function where the 
+local variable is set. 
+Without "expr" the command print the latest value stored in the value history. 
+Indeed, each command "print" save the value printed in a value history under 
+the form of successive integers, starting by one, by which we can use for 
+reference (so if we tap print $num which num is the reference in the history, 
+"print" show the value associated)
+
+---> ptype "expr" :
+If we are interested in information about types, or about how the fields of a 
+struct or a class are declared, use the ptype command rather than print
+
+---> explore "args" :
+explore is useful when we dealing with structures, and allow us to litteraly 
+"explore" levels or fields of "args" whatsoever it is an expression in source 
+code or a type visible in the debugging.
+For example, if we tap <explore complex_struct> admitting such a struct exist 
+in our code, we will be prompt to select the field to explore, like :
+    field 1 = <select 0 to explore this field of type char*>
+    field 2 = <select 1 to explore this field of type int>
+and so one... hiting the return key, goes back up us to the highier level of 
+the data structures.
+
+---> (info) display "expr" :
+Add specified expression "expr" to the auto-display list. Like that, each time 
+the program stop, GDB display the value of each "expr" stored in the 
+auto-display list. In the list, the reference to the each "expr" is a integer 
+like in the value history.
+When info is taped, show the auto-display list expressions
+
+---> delete/disable/enable display "dnum" :
+Delete or disable/enable a expresion refered by the integer "dnum" in the list
