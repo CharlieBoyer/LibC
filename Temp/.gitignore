@@ -3,11 +3,15 @@
 # Untrack useless files
 *.o
 *.a
-*.txt
+*.
 *.md
 
+# Untrack unused or temporary folders
+Temp
+Docs
+
 # Ignore IDE buit-in config folder
-**/.vscode
+.vscode
 
 # Ignore Coding Style Norm Checker
 NormEZ.rb
