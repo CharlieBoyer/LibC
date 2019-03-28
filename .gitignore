@@ -1,11 +1,13 @@
-.htaccess
-css.php
-rpc/
-sites/site*/admin/
-sites/site*/private/
-sites/site*/public/admin/
-sites/site*/public/setup/
-sites/site*/public/theme/
-textpattern/
-HISTORY.txt
-README.txt
+# .gitignore file
+
+# Untrack useless files
+*.o
+*.a
+*.txt
+*.md
+
+# Ignore IDE buit-in config folder
+**/.vscode
+
+# Ignore Coding Style Norm Checker
+NormEZ.rb
