@@ -3,7 +3,7 @@
 ## Personal Library for C language
 
 **Welcome !** \
-As part of my IT studies, this is my personal library, build through my first year while I learn the C language. \
+As part of my IT studies, this is my personal library, build through my first year while I learn the C language.
 
 This lib containes some sub-libraries that used for specific projects other are more generical and serve as tools. \
 Here are all available libraries :
