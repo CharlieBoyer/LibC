@@ -1,16 +1,36 @@
-# .gitignore file
+##
+## .gitignore sample for Epitech projects and 
+## unused or unfinished/break files
+##
 
-# Untrack useless files
+# Ignore .vscode directory
+.vscode
+
+# Ignore .o file
 *.o
+
+# Ignore .a file
 *.a
-*.
-*.md
 
-# Untrack unused or temporary folders
-temp
+# Ignore .txt file & mardown files (.md)
+! *.txt
+! *.md
 
-# Ignore IDE buit-in config folder
-**/.vscode
+# Ignore lib README.md
+! README.md
 
-# Ignore Coding Style Norm Checker
+# Ignore unused ./lib/ sub-directories & headers
+! **/lib_csfml
+! **/lib_file_system
+! **/lib_printf
+! **/lib_bubble_sort
+! **/update_queue
+
+# Leave lib headers untracked without lib.h
+! **/include/lib_tools_h
+! **/include/lib_csfml_h
+! **/include/lib_printf_h
+! bubble_sort.h
+
+## Ignore NormChecker
 NormEZ.rb
