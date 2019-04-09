@@ -21,10 +21,10 @@ informations needed by gdb. \
 
 + **(gdb) $>** -eval-command *command*
 
-> example : **(gdb) $>** -eval-command break 34 | **(gdb) $>** -ex *break 34* -ex *run*
+> example : **(gdb) $>** -eval-command *break 34* | **(gdb) $>** -ex *break 34* -ex *run*
 
-Called ***-ex command*** too, ***-eval-command*** execute a single GDB "command" and need sometimes to be repeated to make the expected result. \
-This syntaxe is used by VS Code built-in debug console
+Called **-ex _command_** too, **-eval-command** execute a single GDB "command" and need sometimes to be repeated to make the expected result. \
+This syntax is used by VS Code built-in debug console too
 
 + **(gdb) $>** run *arguments*
 
@@ -53,7 +53,7 @@ This command enable one or various breakpoints again, "***once***" key-word enab
 specified breakpoint once and disable it after, "***delete***" enable the breakpoint
 once before delete it and "***count***" disable the breakpoint after being triggered
 
-> **(gdb) $>** delete *location*
++ **(gdb) $>** delete *location*
 
 Works like **break** but remove, if no arguments are specified, all breakpoints setted after prompted. \
 Otherwise, you can specify the breakpoint location (like break -> ***file:line***).
