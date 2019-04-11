@@ -94,3 +94,5 @@ fclean:	clean
 re: fclean all clean
 
 .PHONY: all tools csfml my_printf clean fclean re
+
+.SILENT: clean fclean

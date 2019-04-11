@@ -32,5 +32,8 @@
 ! **/include/lib_printf_h
 ! bubble_sort.h
 
-## Ignore NormChecker
-NormEZ.rb
+# Ignore other special repository
+./TODO
+
+# Ignore NormChecker
+! NormEZ.rb
