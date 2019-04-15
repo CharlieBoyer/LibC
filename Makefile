@@ -18,12 +18,12 @@ tools:
 
 graphics:
 	@echo "Building my_csfml.a ..."
-	@make all -C ./source/graphical
+	@make -s all -C ./source/graphical
 	@mv ./source/graphical/libmy_csfml.a ./
 
 my_printf:
 	@echo "Building my_printf.a ..."
-	@make all -C ./source/my_printf
+	@make -s all -C ./source/my_printf
 	@mv ./source/my_printf/libmy_printf.a ./
 
 clean:
