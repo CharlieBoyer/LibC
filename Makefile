@@ -26,13 +26,16 @@ my_printf:
 	@make -s all -C ./source/my_printf
 	@mv ./source/my_printf/libmy_printf.a ./
 
+linked_list:
+	@echo "Building linked_list.a ..."
+	@make -s all -C ./source/linked_list
+	@mv ./source/linked_list/liblinked_list.a ./
+
 clean:
 	@echo "Cleaning all .o and unused files"
 	@make clean -C ./source/graphical
 	@make clean -C ./source/my_printf
 	@make clean -C ./source/tools
-	rm -f *~
-	rm -f *#*
 
 fclean:	clean
 	rm -f ./libtools.a

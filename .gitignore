@@ -19,21 +19,23 @@
 # Ignore lib README.md
 ! README.md
 
-# Ignore unused ./lib/ sub-directories & headers
-! **/lib_csfml
-! **/lib_file_system
-! **/lib_printf
-! **/lib_bubble_sort
-! **/update_queue
+# Ignore sub-directories of ./lib/include
+! lib/include/algo_h
+! lib/include/graphical_h
+! lib/include/linked_list_h
+! lib/include/my_printf_h
+! lib/include/tools_h
 
-# Leave lib headers untracked without lib.h
-! **/include/lib_tools_h
-! **/include/lib_csfml_h
-! **/include/lib_printf_h
-! bubble_sort.h
+# Ignore unused ./lib/source directories
+! **/source/algorythm
+! **/source/file_system
+! **/source/graphical
+! **/source/linked_list
+! **/source/my_printf
+! **/source/tools
 
-# Ignore other special repository
-./TODO
+# Ignore other special folders
+! lib/tasks
 
 # Ignore NormChecker
 ! NormEZ.rb
