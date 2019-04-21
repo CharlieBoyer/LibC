@@ -5,7 +5,9 @@
 ## Linked_list library
 ##
 
-LIST =	./create_list.c
+LIST =	./print_list.c \
+		./push_new_node.c \
+		./remove_node.c
 
 OBJ =	$(LIST:.c=.o)
 

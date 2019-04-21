@@ -36,11 +36,13 @@ clean:
 	@make clean -C ./source/graphical
 	@make clean -C ./source/my_printf
 	@make clean -C ./source/tools
+	@make clean -C ./source/linked_list
 
 fclean:	clean
 	rm -f ./libtools.a
 	rm -f ./libmy_csfml.a
 	rm -f ./libmy_printf.a
+	rm -f ./liblinked_list.a
 
 re: fclean all clean
 	@echo "All library rebuit"
