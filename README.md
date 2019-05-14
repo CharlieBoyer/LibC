@@ -5,7 +5,7 @@
 **Welcome !** \
 As part of my IT studies, this is my personal library, build through my first year while I learn the C language.
 
-This lib containes some sub-libraries that used for specific projects other are more generical and serve as tools. \
+This _lib_ contains some sub-libraries that used for specific projects, and an other part are more generical and serve as tools. \
 Here are all available libraries :
 
 > Note : Some libraries are incomplete or still in progress
@@ -23,7 +23,7 @@ Here are all available libraries :
 + **graphical.a** :
 
   Always in C language, we had to do some "graphical projects" such as video games.
-  With the help of the external ***CSFML library***, an adaptation of _**SFML** lib for C language_, this library contains useful functions for ***initialize windows***, ***graphical elements***, ***events***, ***loop control***, ***memory*** and ***performances managemement***.
+  With the help of the external ***CSFML library***, an adaptation of _**SFML** lib for C language_, this library was intented to contains useful functions for ***initialize windows***, ***graphical elements***, ***set-up events***, ***loop control***, ***memory*** and ***performances managemement***.
 
   > Note : Although it still in progress, there are lot of generical function waiting to be added.
 
@@ -39,5 +39,4 @@ Here are all available libraries :
 
 + **algo.a** :
 
-  I'm sorry, there almost nothing here. Basically, some algorythms for sorting, making things recursively are useful. I wanted to add "generical" functions for reproducing a "bubble_sort" like, a basic algorythm for sorting growing numbers.
-  
+  I'm sorry, there almost nothing here. Basically, some algorythms for sorting, making things recursively are useful. I wanted to add "generical" functions for reproducing a ***"bubble_sort"*** algorythm like, a basic algorythm for sorting growing numbers.
