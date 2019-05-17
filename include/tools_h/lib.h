@@ -22,8 +22,9 @@
     char *my_revstr(char *str);
     char **my_str_to_word_array();
     char *my_strcat(char *init, char *to_concat);
-    int my_strcmp(char *source, char *model);
     char *my_strncat(char *dest, char const *src, int nb);
+    int my_strcmp(char *source, char *model);
+    int my_strncmp(char *compared, char *reference, int index, int n);
     char *my_strcpy(char *dest, char *src);
     char *my_strncpy(char *dest, char const *src, int n);
     void error_output(char *str);
