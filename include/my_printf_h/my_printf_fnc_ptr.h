@@ -12,7 +12,7 @@
 
 struct ptr_on_function {
     char flag;
-    void (*ptr)(va_list);
+    int (*ptr)(va_list);
 };
 typedef struct ptr_on_function flag_for_printf_t;
 

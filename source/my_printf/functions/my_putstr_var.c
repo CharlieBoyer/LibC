@@ -8,7 +8,7 @@
 #include <stdarg.h>
 #include "lib.h"
 
-void my_putstr_custom(va_list list)
+int my_putstr_var(va_list list)
 {
     int i = 0;
     char *str = va_arg(list, char *);
@@ -17,4 +17,5 @@ void my_putstr_custom(va_list list)
         my_putchar(str[i]);
         ++i;
     }
+    return (0);
 }

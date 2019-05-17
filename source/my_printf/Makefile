@@ -1,29 +1,32 @@
 ##
 ## EPITECH PROJECT, 2019
-## Personal Lib
+## my_printf build
 ## File description:
-## my_printf.a
+## Global Makefile
 ##
 
-MY_PRINTF =	./flag_management.c \
-			./my_printf.c \
-			./functions/my_putchar_custom.c \
-			./functions/my_putnbr_custom.c \
-			./functions/my_putstr_custom.c
+SRC =	my_printf.c \
+		flag_management.c \
+		functions/binary_conversion.c \
+		functions/my_put_int_var.c \
+		functions/my_put_long_var.c \
+		functions/my_put_uint_var.c \
+		functions/my_putchar_var.c \
+		functions/my_putstr_var.c \
+		functions/octal_conversion.c
 
-OBJ =	$(MY_PRINTF:.c=.o)
+OBJ =	$(SRC:.c=.o)
 
-LIB_NAME =	libmy_printf.a
+BIN =	libmy_printf.a
 
-CFLAGS	=	-W -Wall -Wextra -Wextra
-CFLAGS	+=	-I../../include/my_printf_h -I../../include/tools_h
+CFLAGS =	-O0 -W -Wall -Wextra -I../../include/tools_h -I../../include/my_printf_h
 
 LDFLAGS =	-L../../ -ltools
 
-all: my_printf
+all: $(BIN)
 
-my_printf: $(OBJ)
-	ar rc $(LIB_NAME) $(OBJ)
+$(BIN): $(OBJ)
+	ar rc $(BIN) $(OBJ)
 
 clean:
 	rm -f $(OBJ)

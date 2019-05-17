@@ -8,14 +8,18 @@
 #include <stdarg.h>
 #include <unistd.h>
 
-void my_putchar_custom(va_list list)
+int my_putchar_var(va_list list)
 {
     char c = (char)va_arg(list, int);
+
     write (1, &c, 1);
+    return (0);
 }
 
-void print_percent(void)
+int print_percent(void)
 {
     char c = '%';
+
     write(1, &c, 1);
+    return (0);
 }
