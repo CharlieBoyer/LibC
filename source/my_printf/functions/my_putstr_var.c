@@ -6,7 +6,7 @@
 */
 
 #include <stdarg.h>
-#include "lib.h"
+#include "tools.h"
 
 int my_putstr_var(va_list list)
 {

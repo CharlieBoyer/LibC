@@ -5,7 +5,7 @@
 ** string comparator from 'index' until 'n' characters
 */
 
-#include "lib.h"
+#include "tools.h"
 
 int my_strncmp(char *compared, char *reference, int index, int n)
 {

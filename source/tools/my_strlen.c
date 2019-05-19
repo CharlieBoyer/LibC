@@ -5,7 +5,7 @@
 ** ...
 */
 
-#include "lib.h"
+#include "tools.h"
 
 int my_strlen(char *str)
 {

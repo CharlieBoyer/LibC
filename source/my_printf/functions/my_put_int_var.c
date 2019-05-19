@@ -7,7 +7,7 @@
 
 #include <stdarg.h>
 #include <limits.h>
-#include "lib.h"
+#include "tools.h"
 
 int my_put_int_var(int input)
 {

@@ -6,7 +6,7 @@
 */
 
 #include <unistd.h>
-#include "lib.h"
+#include "tools.h"
 
 void error_output(char *error_message)
 {

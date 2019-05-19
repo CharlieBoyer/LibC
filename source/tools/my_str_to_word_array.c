@@ -7,7 +7,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "lib.h"
+#include "tools.h"
 #include "my_printf.h"
 #include "char_analyser_mode.h"
 
@@ -37,7 +37,7 @@ char **set_array(const char *str)
         return (NULL);
     }
     while (y < word) {
-        array[y] = malloc(sizeof(char) * (my_strlen_word(str, &i) + 1));
+        array[y] = malloc(sizeof(char) * (my_strlen_word(str) + 1));
         if (array[y] == NULL) {
             return (NULL);
         }

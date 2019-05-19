@@ -5,8 +5,6 @@
 ** Test numbers as argument and say if it is positive or negative
 */
 
-#include "lib.h"
-
 int my_nbr_isneg(int nb)
 {
     if (nb < 0) {

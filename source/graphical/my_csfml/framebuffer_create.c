@@ -7,7 +7,7 @@
 
 #include <stdlib.h>
 #include "framebuffer.h"
-#include "lib.h"
+#include "tools.h"
 
 framebuffer_t *framebuffer_create(unsigned int width, unsigned int height)
 {

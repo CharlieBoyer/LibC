@@ -7,7 +7,7 @@
 
 #include <stdlib.h>
 #include "csfml.h"
-#include "lib.h"
+#include "tools.h"
 
 hit_box_t *init_hit_box_pos(int x, int x_max, int y, int y_max)
 {

@@ -6,7 +6,7 @@
 */
 
 #include <stdlib.h>
-#include "lib.h"
+#include "tools.h"
 
 char *my_strcat(char *init, char *str_to_concat)
 {

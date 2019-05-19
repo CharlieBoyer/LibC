@@ -5,7 +5,7 @@
 ** Set (or reset) a incoming int or a index to 0
 */
 
-#include "lib.h"
+#include "tools.h"
 
 int reset_index(int *index)
 {

@@ -6,7 +6,7 @@
 */
 
 #include <stdlib.h>
-#include "lib.h"
+#include "tools.h"
 #include "char_analyser_mode.h"
 
 const int SIGMODE = 10;

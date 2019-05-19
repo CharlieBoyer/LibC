@@ -8,7 +8,7 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
-#include "lib.h"
+#include "tools.h"
 
 int fs_open_file(char const *filepath)
 {

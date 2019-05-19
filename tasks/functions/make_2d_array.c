@@ -8,7 +8,7 @@
 /*
 #include <stdarg.h>
 #include <stdlib.h>
-#include "lib.h"
+#include "tools.h"
 
 int **put_int_in_2d_array(int **array, int element_nb, ...)
 {

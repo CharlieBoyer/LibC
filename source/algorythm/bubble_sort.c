@@ -6,7 +6,7 @@
 */
 
 #include <stdlib.h>
-#include "lib.h"
+#include "tools.h"
 
 int bubble_sort(int size, char **list)
 {

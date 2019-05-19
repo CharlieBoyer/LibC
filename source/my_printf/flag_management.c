@@ -7,7 +7,7 @@
 
 #include <stdlib.h>
 #include "my_printf.h"
-#include "lib.h"
+#include "tools.h"
 
 const int FLAG_EXECUTED = 10;
 

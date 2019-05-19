@@ -5,7 +5,7 @@
 ** Dispaly a number
 */
 
-#include "lib.h"
+#include "tools.h"
 
 void my_putnbr(int nb)
 {

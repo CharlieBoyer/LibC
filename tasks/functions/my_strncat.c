@@ -6,7 +6,7 @@
 */
 
 /*
-#include "lib.h"
+#include "tools.h"
 
 char *my_strncat(char *dest, char const *src, int nb)
 {

@@ -5,7 +5,7 @@
 ** Compare each characters 2 strings and return 1 if they match.
 */
 
-#include "lib.h"
+#include "tools.h"
 
 int check_differences(char *source, char *reference)
 {
