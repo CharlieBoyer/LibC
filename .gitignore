@@ -40,3 +40,7 @@
 
 # Ignore NormChecker
 ! NormEZ.rb
+
+# Ignore binaries and other unused files
+*.out
+sandox.c
