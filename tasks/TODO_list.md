@@ -6,7 +6,7 @@ NOT FORGET TO UPDATE FILES INSIDE ***./lib/*** DIRECTORY AND IN THE MAKEFILE
 
 ## List
 
-+ Complete my_printf flags and functions [***Aborted***]
++ Complete my_printf flags and functions [***ON_GOING***]
 
 + Make 2-arrays related functions into reusable functions
 

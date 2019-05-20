@@ -5,8 +5,8 @@
 ** main header for the whole project
 */
 
-#ifndef SOURCE_HEADER_H_
-    #define SOURCE_HEADER_H_
+#ifndef MY_PRINTF_H_
+    #define MY_PRINTF_H_
 
     #include <stdarg.h>
     #include "my_printf_fnc_ptr.h"
@@ -30,4 +30,4 @@
     int flag_execution(char *command, int command_index,
         flag_for_printf_t *flag_array, va_list list);
 
-#endif /* !SOURCE_HEADER_H_ */
+#endif /* !MY_PRINTF_H */

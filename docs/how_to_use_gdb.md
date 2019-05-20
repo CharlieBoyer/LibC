@@ -5,7 +5,7 @@
 
 Always add the ***-ggdb*** flag to compile programs with debugging
 informations needed by gdb. \
-(note : gcc support -0 and -g flag in same time)
+(note : gcc support -0g flag for optimize debugging)
 
 ## Start GDB
 

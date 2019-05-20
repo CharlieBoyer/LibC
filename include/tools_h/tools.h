@@ -1,12 +1,12 @@
 /*
 ** EPITECH PROJECT, 2018
-** my.h
+** libtools.a header
 ** File description:
 ** Contains all "tools" fonctions prototypes
 */
 
-#ifndef LIB_H
-    #define LIB_H
+#ifndef TOOLS_H
+    #define TOOLS_H
 
     #include "char_analyser_mode.h"
 
@@ -30,4 +30,4 @@
     void error_output(char *str);
     int reset_index(int *index);
 
-#endif /* !LIB_H_ */
+#endif /* !TOOLS_H */
