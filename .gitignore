@@ -43,4 +43,4 @@
 
 # Ignore binaries and other unused files
 *.out
-sandox.c
+sandbox.c
