@@ -20,7 +20,7 @@
     int my_strlen_word(char *str);
     int my_getnbr(char const *str);
     char *my_revstr(char *str);
-    char **my_str_to_word_array();
+    char **my_str_to_word_array(char *str);
     char *my_strcat(char *init, char *to_concat);
     char *my_strncat(char *dest, char const *src, int nb);
     int my_strcmp(char *source, char *model);

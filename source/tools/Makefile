@@ -20,8 +20,8 @@ TOOLS =	./char_analyser.c \
 		./my_strncpy.c \
 		./my_strlen.c \
 		./my_swap.c \
-		./reset_index.c
-		#./my_str_to_word_array.c \#
+		./reset_index.c \
+		./my_str_to_word_array.c
 
 OBJ =	$(TOOLS:.c=.o)
 
