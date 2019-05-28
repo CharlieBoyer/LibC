@@ -44,7 +44,7 @@ char **set_array(char *str)
     return (array);
 }
 
-char **my_str_to_word_array(char *str)
+char **my_str_to_word_array(char *str, char delimiter)
 {
     int word_i = 0;
     int str_i = 0;
@@ -52,7 +52,8 @@ char **my_str_to_word_array(char *str)
     char **array = set_array(str);
 
     while (str[str_i] != '\0') {
-        if (str[str_i] == ' ' || str[str_i] == '\t') {
+        if (str[str_i] == delimiter || str[str_i] == '\t'
+        || str[str_i] == '\n' || str[str_i] == '\0') {
             array[word_i][array_i] = '\0';
             word_i = word_i + 1;
             str_i = str_i + 1;
