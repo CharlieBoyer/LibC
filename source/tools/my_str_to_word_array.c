@@ -31,17 +31,23 @@ char **set_array(char *str)
     int word = count_word(str);
     char **array = malloc(sizeof(char *) * (word + 1));
 
-    if (array == NULL) {
+    if (array == NULL)
         return (NULL);
-    }
     while (y < word) {
-        array[y] = malloc(sizeof(char) * (my_strlen_word(str) + 1));
-        if (array[y] == NULL) {
+        array[y] = malloc(sizeof(char) * (my_strlen(str) + 1));
+        if (array[y] == NULL)
             return (NULL);
-        }
         ++y;
     }
+    array[word] = NULL;
     return (array);
+}
+
+void skip_between_words(char *str, int *index, char delimiter)
+{
+    while (str[*index] == delimiter || str[*index] == '\t' ||
+    str[*index] == ' ' || str[*index] == '\n' || str[*index] == '\0')
+        ++*index;
 }
 
 char **my_str_to_word_array(char *str, char delimiter)
@@ -49,20 +55,18 @@ char **my_str_to_word_array(char *str, char delimiter)
     int word_i = 0;
     int str_i = 0;
     int array_i = 0;
-    char **array = set_array(str);
+    char **array = NULL;
 
+    if (str == NULL || (array = set_array(str)) == NULL)
+        return NULL;
     while (str[str_i] != '\0') {
-        if (str[str_i] == delimiter || str[str_i] == '\t'
+        if (str[str_i] == delimiter || str[str_i] == '\t' || str[str_i] == ' '
         || str[str_i] == '\n' || str[str_i] == '\0') {
-            array[word_i][array_i] = '\0';
-            word_i = word_i + 1;
-            str_i = str_i + 1;
+            skip_between_words(str, &str_i, delimiter);
+            array[word_i++][array_i] = '\0';
             reset_index(&array_i);
-        } else {
-            array[word_i][array_i] = str[str_i];
-            str_i = str_i + 1;
-            array_i = array_i + 1;
-        }
+        } else
+            array[word_i][array_i++] = str[str_i++];
     }
     array[word_i][array_i] = '\0';
     return (array);
