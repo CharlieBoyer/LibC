@@ -60,7 +60,7 @@ void skip_word_and_non_alphanum_char(char const *str, int *index, int *y)
     *y = *y + 1;
 }
 
-char **my_str_to_word_array_synthesis(char const *str)
+char **my_str_to_word_array(char const *str)
 {
     int str_i = 0;
     int x = 0;
