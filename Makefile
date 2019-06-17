@@ -5,6 +5,8 @@
 ## Makefile for personnal libraries
 ##
 
+RM	= rm -f
+
 all: # project building rule
 	@echo "If you seeing this, complete the 'all' rule and erase this message"
 
@@ -39,10 +41,10 @@ clean:
 	@make clean -C ./source/linked_list
 
 fclean:	clean
-	rm -f ./libtools.a
-	rm -f ./libmy_csfml.a
-	rm -f ./libmy_printf.a
-	rm -f ./liblinked_list.a
+	$(RM) ./libtools.a
+	$(RM) ./libmy_csfml.a
+	$(RM) ./libmy_printf.a
+	$(RM) ./liblinked_list.a
 
 re: fclean all clean
 	@echo "All library rebuit"

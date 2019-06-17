@@ -7,63 +7,79 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "tools.h"
-#include "char_analyser_mode.h"
 
-int count_word(const char *str)
+int is_alphanum_custom(char c)
 {
-    int i = 0;
-    int word = 0;
-
-    while (str[i] != '\0') {
-        if (char_analyser(str[i], ALPHA_PLUS) == 1
-            && char_analyser(str[i + 1], ALPHA_PLUS) != 1) {
-            ++word;
-        }
-        ++i;
+    if ((c >= '0' && c <= '9')
+    || (c >= 'A' && c <= 'Z')
+    || (c >= 'a' && c <= 'z')
+    || (c == '-') || c == '.' || c == '/') {
+        return (1);
+    } else {
+        return (0);
     }
-    return (word);
 }
 
-char **set_array(char *str)
+int my_strlen_word(char const *str)
 {
-    int y = 0;
-    int word = count_word(str);
-    char **array = malloc(sizeof(char *) * (word + 1));
+    static int start_index = 0;
+    int word_len = 0;
 
-    if (array == NULL) {
-        return (NULL);
+    while (is_alphanum_custom(str[start_index]) == 0) {
+        start_index = start_index + 1;
     }
-    while (y < word) {
-        array[y] = malloc(sizeof(char) * (my_strlen_word(str) + 1));
-        if (array[y] == NULL) {
-            return (NULL);
-        }
-        ++y;
+    while (is_alphanum_custom(str[start_index]) == 1) {
+        word_len = word_len + 1;
+        start_index = start_index + 1;
     }
-    return (array);
+    return (word_len);
 }
 
-char **my_str_to_word_array(char *str, char delimiter)
+int count_word(char const *str)
 {
-    int word_i = 0;
+    int index = 0;
+    int word_nb = 0;
+
+    while (str[index] != '\0') {
+        if (is_alphanum_custom(str[index]) == 1
+        && is_alphanum_custom(str[index + 1]) == 0) {
+            word_nb = word_nb + 1;
+        }
+        index = index + 1;
+    }
+    return (word_nb);
+}
+
+void skip_word_and_non_alphanum_char(char const *str, int *index, int *y)
+{
+    while (is_alphanum_custom(str[*index]) == 0) {
+        if (str[*index] == '\0')
+            break;
+        *index = *index + 1;
+    }
+    *y = *y + 1;
+}
+
+char **my_str_to_word_array_synthesis(char const *str)
+{
     int str_i = 0;
-    int array_i = 0;
-    char **array = set_array(str);
+    int x = 0;
+    int y = 0;
+    char **array = malloc(sizeof(char *) * (count_word(str) + 1));
 
+    if (array == NULL)
+        return (NULL);
     while (str[str_i] != '\0') {
-        if (str[str_i] == delimiter || str[str_i] == '\t'
-        || str[str_i] == '\n' || str[str_i] == '\0') {
-            array[word_i][array_i] = '\0';
-            word_i = word_i + 1;
+        array[y] = malloc(sizeof(char) * (my_strlen_word(str) + 1));
+        while (is_alphanum_custom(str[str_i]) == 1) {
+            array[y][x] = str[str_i];
             str_i = str_i + 1;
-            reset_index(&array_i);
-        } else {
-            array[word_i][array_i] = str[str_i];
-            str_i = str_i + 1;
-            array_i = array_i + 1;
+            x = x + 1;
         }
+        array[y][x] = '\0';
+        x = 0;
+        skip_word_and_non_alphanum_char(str, &str_i, &y);
     }
-    array[word_i][array_i] = '\0';
+    array[y] = NULL;
     return (array);
 }

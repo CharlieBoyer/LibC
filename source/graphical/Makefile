@@ -5,6 +5,8 @@
 ## graphics lib --> my_csfml.a
 ##
 
+RM = rm -f
+
 MY_CSFML =	./my_csfml/framebuffer_create.c \
 			./my_csfml/hitbox.c
 
@@ -24,7 +26,7 @@ my_csfml: $(OBJ)
 	ar rc $(LIB_NAME) $(OBJ)
 
 clean:
-	rm -f $(OBJ)
+	$(RM) $(OBJ)
 
 .PHONY: all clean
 

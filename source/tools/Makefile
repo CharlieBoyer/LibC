@@ -5,6 +5,8 @@
 ## tools.a
 ##
 
+RM = rm -f
+
 TOOLS =	./char_analyser.c \
 		./error_output.c \
 		./is_alpha.c \
@@ -36,7 +38,7 @@ tools: $(OBJ)
 	ar rc $(LIB_NAME) $(OBJ)
 
 clean:
-	rm -f $(OBJ)
+	$(RM) $(OBJ)
 
 .PHONY: all clean
 

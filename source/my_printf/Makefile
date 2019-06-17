@@ -5,6 +5,8 @@
 ## Global Makefile
 ##
 
+RM = rm -f
+
 SRC =	my_printf.c \
 		flag_management.c \
 		functions/binary_conversion.c \
@@ -29,7 +31,7 @@ $(BIN): $(OBJ)
 	ar rc $(BIN) $(OBJ)
 
 clean:
-	rm -f $(OBJ)
+	$(RM) $(OBJ)
 
 .PHONY: all clean
 
