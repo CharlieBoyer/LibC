@@ -14,14 +14,24 @@ char *my_strcat(char *init, char *str_to_concat)
     int index = 0;
     int second_index = 0;
 
-    while (init[index] != '\0') {
-        result[index] = init[index];
-        ++index;
+    if (result == NULL) {
+        return NULL;
     }
-    while (str_to_concat[second_index] != '\0') {
-        result[index + second_index] = str_to_concat[second_index];
-        ++second_index;
+    
+    if (str_to_concat == NULL) {
+        return init;
+    } else if (init == NULL && str_to_concat != NULL) { 
+        return str_to_concat;
+    } else {
+        while (init[index] != '\0') {
+            result[index] = init[index];
+            ++index;
+        }
+        while (str_to_concat[second_index] != '\0') {
+            result[index + second_index] = str_to_concat[second_index];
+            ++second_index;
+        }
+        result[index + second_index] = '\0';
+        return (result);
     }
-    result[index + second_index] = '\0';
-    return (result);
 }
