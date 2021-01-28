@@ -1,17 +1,11 @@
 ##
-## EPITECH PROJECT, 2018
-## Personnal lib Makefile
+## Makefile
 ## File description:
-## Makefile for personnal libraries
+## Building rules for all libraries
 ##
 
-RM	= rm -f
-
-all: # project building rule
-	@echo "If you seeing this, complete the 'all' rule and erase this message"
-
-full: tools graphics my_printf
-	@echo "Warning : All libraries were built !"
+all: tools graphics my_printf
+	@echo "Warning: All libraries were built !"
 
 tools:
 	@echo "Building tools.a ..."
